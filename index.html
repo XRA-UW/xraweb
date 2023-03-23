@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>A-Frame Example</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+    <script src="teleport.js"></script>
+  </head>
+  <body>
+    <a-scene cursor="rayOrigin: mouse">
+
+      <!-- camera -->
+      <a-entity id="rig" position="0 1.6 0">
+        <a-entity id="camera" camera look-controls></a-entity>
+      </a-entity>
+
+      <a-asset>
+        <!-- preload asset -->
+      </a-asset>
+
+      <!-- Ground plane for teleportation -->
+      <a-plane position="0 0 -8" rotation="-90 0 0" width="8" height="16" color="#7BC8A4" teleport-on-click></a-plane>
+      
+      <!-- XRA sculpture in center -->
+      <a-entity position="0 1.5 -14" scale="2 2 2">
+        <!-- todo  -->
+      </a-entity>
+
+      <!-- Message board -->
+      <a-entity position="-2.5 0.5 -6" rotation="0 45 0" enterMessage>
+        <a-text id="message" position="-0.8 0.8 0" value="Post a message:" color="#333333"></a-text>
+        <a-plane color="#FFFFFF" opacity="0.8" width="2" height="2"></a-plane>
+        <!-- todo -->
+      </a-entity>
+    </a-scene>
+  </body>
+</html>
